@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saraswati Puja Donation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .option {
+            background: #f8f8f8;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .amount {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .qr-code {
+            width: 250px;
+            max-width: 90%;
+            margin: 10px auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #ff7a00;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #e66d00;
+        }
+
+        .note {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🙏 Saraswati Puja</h1>
+
+    <p class="subtitle">
+        Donation Collection
+    </p>
+
+    <div class="option">
+        <h2>Per House</h2>
+        <div class="amount">₹200</div>
+    </div>
+
+    <div class="option">
+        <h2>Boys</h2>
+        <p>Any Amount</p>
+    </div>
+
+    <!-- QR CODE -->
+    <div class="option">
+        <h2>📱 Scan & Pay</h2>
+
+        <img
+            src="{{ url_for('static', filename='qr.png') }}"
+            alt="Donation QR Code"
+            class="qr-code"
+        >
+
+        <p><b>QR Scan karke payment karein</b></p>
+
+        <p class="note">
+            Payment ke baad UTR / UPI Ref No. enter karein.
+        </p>
+    </div>
+
+    <!-- DONATION FORM -->
+    <form action="/donate" method="POST">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+            required
+        >
+
+        <input
+            type="number"
+            name="amount"
+            placeholder="Enter Amount"
+            min="1"
+            required
+        >
+
+        <input
+            type="text"
+            name="utr"
+            placeholder="Enter UTR / UPI Ref No."
+            required
+        >
+
+        <button type="submit">
+            Donate Now
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
