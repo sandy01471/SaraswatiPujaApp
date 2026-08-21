@@ -8,7 +8,7 @@ app.secret_key = "saraswati-puja-admin-secret-2026"
 
 # Admin login
 ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "password == "Saraswati@9508#Puja2026!":
+ADMIN_PASSWORD = "Saraswati@9508#Puja2026!"
 
 # Temporary storage for demo
 donations = []
