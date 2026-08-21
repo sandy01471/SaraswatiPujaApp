@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Donation Successful</title>
 
     <style>
@@ -45,6 +44,7 @@
         .amount {
             font-size: 22px;
             font-weight: bold;
+            color: #000;
         }
 
         .utr {
@@ -52,74 +52,52 @@
             padding: 12px;
             border-radius: 8px;
             margin-top: 15px;
-            word-break: break-all;
+            word-break: break-word;
         }
 
-        .buttons {
+        .home {
+            display: inline-block;
             margin-top: 25px;
-        }
-
-        a {
-            display: block;
-            margin: 12px auto;
-            padding: 12px 20px;
+            padding: 12px 25px;
             background: #ff7a00;
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            max-width: 220px;
-        }
-
-        a:hover {
-            background: #e66d00;
-        }
-
-        .home {
-            background: #555;
+            font-weight: bold;
         }
 
         .home:hover {
-            background: #333;
+            background: #e66d00;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="box">
+<div class="box">
 
-        <div class="success-icon">🙏</div>
+    <div class="success-icon">🙏</div>
 
-        <h1>✅ Donation Recorded</h1>
+    <h1>✅ Donation Recorded</h1>
 
-        <h2>Thank you {{ name }}!</h2>
+    <h2>Thank you {{ name }}!</h2>
 
-        <p>
-            Your donation has been successfully recorded.
-        </p>
+    <p>Your donation has been successfully recorded.</p>
 
-        <p class="amount">
-            Donation Amount: ₹{{ amount }}
-        </p>
+    <p class="amount">
+        Donation Amount: ₹{{ amount }}
+    </p>
 
-        <div class="utr">
-            <strong>UTR / UPI Ref No.:</strong><br>
-            {{ utr }}
-        </div>
-
-        <div class="buttons">
-
-            <a href="/records">
-                📋 View Donation Records
-            </a>
-
-            <a href="/" class="home">
-                ← Back to Home
-            </a>
-
-        </div>
-
+    <div class="utr">
+        <strong>UTR / UPI Ref No.</strong><br>
+        {{ utr }}
     </div>
+
+    <a href="/" class="home">
+        🏠 Back to Home
+    </a>
+
+</div>
 
 </body>
 </html>
